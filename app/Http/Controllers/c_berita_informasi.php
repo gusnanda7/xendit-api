@@ -86,10 +86,10 @@ class c_berita_informasi extends Controller
     {
         $did = decrypt($id);
         $data = [
-            'status_berita_informasi' => 'Tidak AKtif',
+            'status_berita_informasi' => 'Tidak Aktif',
             'id_user' => Auth::user()->id,];
         $this->berita_informasi->editData($did, $data);
-        return response(['message' => 'berita_informasi Berhasil Di Non aktifkan'], 201);
+        return response(['message' => 'berita_informasi Berhasil Di Non Aktifkan'], 201);
     }
     public function delete($id)
     {
