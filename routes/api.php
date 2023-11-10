@@ -58,6 +58,8 @@ Route::controller(c_berita_informasi::class)->middleware('auth:sanctum')->group(
     Route::get('admin/berita_informasi/{id}', 'show')->middleware('role:admin');
     Route::get('admin/berita_informasi', 'get')->middleware('role:admin');
 	Route::put('admin/berita_informasi/{id}', 'put')->middleware('role:admin');
+    Route::put('admin/aktif/berita_informasi/{id}', 'aktif')->middleware('role:admin');
+    Route::put('admin/nonaktif/berita_informasi/{id}', 'nonaktif')->middleware('role:admin');
     Route::delete('admin/berita_informasi/{id}', 'delete')->middleware('role:admin');
 });
 
