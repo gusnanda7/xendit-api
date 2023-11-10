@@ -6,6 +6,7 @@ use App\Http\Controllers\c_payment;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\c_kategori;
 use App\Http\Controllers\c_fasilitas;
+use App\Http\Controllers\c_berita_informasi;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,12 +43,20 @@ Route::controller(c_kategori::class)->middleware('auth:sanctum')->group(function
     Route::delete('kategori/{id}', 'delete')->middleware('role:admin');
 });
 
-Route::controller(c_kategori::class)->middleware('auth:sanctum')->group(function () {
+Route::controller(c_fasilitas::class)->middleware('auth:sanctum')->group(function () {
     Route::post('fasilitas', 'store')->middleware('role:admin');
     Route::get('fasilitas/{id}', 'show');
     Route::get('fasilitas', 'get');
 	Route::put('fasilitas/{id}', 'put')->middleware('role:admin');
     Route::delete('fasilitas/{id}', 'delete')->middleware('role:admin');
+});
+
+Route::controller(c_berita_informasi::class)->middleware('auth:sanctum')->group(function () {
+    Route::post('berita_informasi', 'store')->middleware('role:admin');
+    Route::get('berita_informasi/{id}', 'show');
+    Route::get('berita_informasi', 'get');
+	Route::put('berita_informasi/{id}', 'put')->middleware('role:admin');
+    Route::delete('berita_informasi/{id}', 'delete')->middleware('role:admin');
 });
 
 // Route::controller(c_payment::class)->middleware('auth:sanctum')->group(function () {
