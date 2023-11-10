@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('judul');
             $table->string('gambar');
             $table->string('isi');
-            $table->string('jenis');
+            $table->string('status_berita_informasi');
+            $table->text('jenis');
             $table->timestamps();
         });
     }

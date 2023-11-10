@@ -52,15 +52,13 @@ Route::controller(c_fasilitas::class)->middleware('auth:sanctum')->group(functio
 });
 
 Route::controller(c_berita_informasi::class)->middleware('auth:sanctum')->group(function () {
-    Route::post('berita_informasi', 'store')->middleware('role:admin');
+    Route::post('admin/berita_informasi', 'store')->middleware('role:admin');
     Route::get('berita_informasi/{id}', 'show');
     Route::get('berita_informasi', 'get');
-	Route::put('berita_informasi/{id}', 'put')->middleware('role:admin');
-    Route::delete('berita_informasi/{id}', 'delete')->middleware('role:admin');
+    Route::get('admin/berita_informasi/{id}', 'show')->middleware('role:admin');
+    Route::get('admin/berita_informasi', 'get')->middleware('role:admin');
+	Route::put('admin/berita_informasi/{id}', 'put')->middleware('role:admin');
+    Route::delete('admin/berita_informasi/{id}', 'delete')->middleware('role:admin');
 });
 
-// Route::controller(c_payment::class)->middleware('auth:sanctum')->group(function () {
-//     Route::post('payment/invoice', 'create')->name('payment.invoice');
-// 	Route::post('payment/bayar', 'bayar')->name('payment.bayar');
-// });
 
