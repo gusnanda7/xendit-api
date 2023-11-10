@@ -59,7 +59,7 @@ class c_berita_informasi extends Controller
         $did = decrypt($id);
         if ($request->gambar <> null) {
             $berita_informasi = $this->berita_informasi->detailData($did);
-            unlink(public_path('gambar'). '/' .$berita_informas->gambar);
+            unlink(public_path('gambar'). '/' .$berita_informasi->gambar);
             date_default_timezone_set("Asia/Jakarta");
             $d = date("Y-m-d");
             $file  = $request->gambar;
@@ -95,7 +95,7 @@ class c_berita_informasi extends Controller
     {
         $did = decrypt($id);
         $berita_informasi = $this->berita_informasi->detailData($did);
-        unlink(public_path('gambar'). '/' .$berita_informas->gambar);
+        unlink(public_path('gambar'). '/' .$berita_informasi->gambar);
         $this->berita_informasi->deleteData($did);
         return response(['message' => 'berita_informasi Berhasil Dihapus'], 201);
     }
