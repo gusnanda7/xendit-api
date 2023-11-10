@@ -39,7 +39,7 @@ Route::controller(c_kategori::class)->middleware('auth:sanctum')->group(function
     Route::post('kategori', 'store')->middleware('role:admin');
     Route::get('kategori/{id}', 'show');
     Route::get('kategori', 'get');
-	Route::put('kategori/{id}', 'put')->middleware('role:admin');
+	Route::post('kategori/{id}', 'put')->middleware('role:admin');
     Route::delete('kategori/{id}', 'delete')->middleware('role:admin');
 });
 
@@ -47,7 +47,7 @@ Route::controller(c_fasilitas::class)->middleware('auth:sanctum')->group(functio
     Route::post('fasilitas', 'store')->middleware('role:admin');
     Route::get('fasilitas/{id}', 'show');
     Route::get('fasilitas', 'get');
-	Route::put('fasilitas/{id}', 'put')->middleware('role:admin');
+	Route::post('fasilitas/{id}', 'put')->middleware('role:admin');
     Route::delete('fasilitas/{id}', 'delete')->middleware('role:admin');
 });
 
@@ -57,7 +57,7 @@ Route::controller(c_berita_informasi::class)->middleware('auth:sanctum')->group(
     Route::get('berita_informasi', 'get');
     Route::get('admin/berita_informasi/{id}', 'show')->middleware('role:admin');
     Route::get('admin/berita_informasi', 'get')->middleware('role:admin');
-	Route::put('admin/berita_informasi/{id}', 'put')->middleware('role:admin');
+	Route::post('admin/berita_informasi/{id}', 'put')->middleware('role:admin');
     Route::put('admin/aktif/berita_informasi/{id}', 'aktif')->middleware('role:admin');
     Route::put('admin/nonaktif/berita_informasi/{id}', 'nonaktif')->middleware('role:admin');
     Route::delete('admin/berita_informasi/{id}', 'delete')->middleware('role:admin');
